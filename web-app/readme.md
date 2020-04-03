@@ -1,8 +1,10 @@
 # INSTRUCTIONS TO RUN THE PROJECT
 
 ## TO POPULATE THE DATA
-Run the file in below path
+To the file in below path
 TRAVEL-APP/web-app/data/index.js
+You can run below command.
+npm run seed
 
 
 ## TO RUN THE PROJECT:

@@ -60,8 +60,18 @@ const constructorMethod = app => {
       try {
         await validateUser(username, password);
         req.session.username = username;
+
+        const data = require("../data/locations");
+        //Harsha: Use get first 6 pacakges to list the top packages
+        const featuredLocations = await data.getall();
+        //split package to multiple row based on column size
+        const featuredColumnSize = 3;
         res.status(200).render("home/index", {
-          pageTitle: "Home"
+          pageTitle: "Home Page",
+          featuredLocations: util.convertListToRows(
+            featuredLocations,
+            featuredColumnSize
+          )
         });
       } catch (e) {
         req.session.test = "test";
